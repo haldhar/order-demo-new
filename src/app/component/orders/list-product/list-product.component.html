@@ -1,0 +1,35 @@
+<div class="card mt-4">
+    <h4 class="card-header">Product List Page</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="products">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="row">
+                        <button mat-raised-button id="order-button" class="btn btn-primary my-3"
+                            (click)="openModal()">CREATE
+                            ORDER</button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of activePageDataChunk">
+                                <td>{{product.id}}</td>
+                                <td>{{product.name}}</td>
+                                <td>{{product.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <mat-paginator class="align-right" [length]="products.length" [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions" (page)="onPageChanged($event)"></mat-paginator>
+</div>

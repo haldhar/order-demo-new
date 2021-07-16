@@ -1,0 +1,100 @@
+<div>
+    <div class="card">
+        <h4 class="card-header">Order Form</h4>
+        <div class="card-body">
+            <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="productId">Product Id </label>
+                        <input type="number" formControlName="productId" min="1" max="7" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted }" />
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div *ngIf="productId.errors.required">ProductId is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="quantity">Quantity </label>
+                        <input type="number" formControlName="quantity" min="1" max="7" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="quantity.errors.required">Quantity is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="from">From </label>
+                        <input type="text" formControlName="from" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="from.errors.required">From is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="to">To </label>
+                        <input type="text" formControlName="to" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="to.errors.required">To is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="cc">CC </label>
+                        <input type="text" formControlName="cc" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="cc.errors.required">CC is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="bcc">BCC </label>
+                        <input type="text" formControlName="bcc" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="bcc.errors.required">BCC is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="subject">Subject </label>
+                        <input type="text" formControlName="subject" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="subject.errors.required">Subject is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="body">Body </label>
+                        <input type="text" formControlName="body" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="body.errors.required">Body is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-xs-24">
+                        <label for="replyTo">ReplyTo </label>
+                        <input type="text" formControlName="replyTo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted  }" />
+                        <div *ngIf="submitted " class="invalid-feedback">
+                            <div *ngIf="replyTo.errors.required">ReplyTo is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-3"><button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Submit
+                        </button></div>
+                    <div><button class="btn btn-primary" (click)="closeModal()">Close</button></div>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

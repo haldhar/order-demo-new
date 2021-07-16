@@ -1,0 +1,30 @@
+<div class="card mt-4">
+    <h4 class="card-header">Order List Page</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Created Date</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of activePageDataChunk">
+                            <td>{{order.id}}</td>
+                            <td>{{order.dateCreated}}</td>
+                            <td>{{order.totalPrice}}</td>
+                            <td>{{order.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <mat-paginator class="align-right" [length]="orders.length" [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions" (page)="onPageChanged($event)"></mat-paginator>
+</div>
