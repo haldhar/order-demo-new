@@ -17,6 +17,11 @@ import { ListProductComponent } from './component/orders/list-product/list-produ
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SortOverviewComponent } from './component/sort-overview/sort-overview.component';
+import { FormsModule } from '@angular/forms';
+
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HeaderComponent,
     FooterComponent,
     ListOrderComponent,
-    ListProductComponent],
+    ListProductComponent,
+    SortOverviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +42,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSliderModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatDialogModule],
+    MatDialogModule,
+    FormsModule,
+    Ng2SearchPipeModule],
   providers: [],
   bootstrap: [AppComponent]
 })

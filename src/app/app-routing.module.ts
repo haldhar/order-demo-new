@@ -5,12 +5,14 @@ import { ListProductComponent } from './component/orders/list-product/list-produ
 import { ListOrderComponent } from './component/orders/list-order/list-order.component';
 import { LoginComponent } from './component/common/login/login.component';
 import { OrderComponent } from './component/orders/order/order.component';
+import { SortOverviewComponent } from './component/sort-overview/sort-overview.component';
 
 const routes: Routes = [
     { path: '', component: ListProductComponent},
     { path: 'login', component: LoginComponent },
     { path: 'order', component: OrderComponent },
     { path: 'listorder', component: ListOrderComponent },
+    { path: 'sorting', component: SortOverviewComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

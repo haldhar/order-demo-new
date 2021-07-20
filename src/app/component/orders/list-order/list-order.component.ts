@@ -12,6 +12,9 @@ import { MainServiceService } from '../../services/main-service.service';
   styleUrls: ['./list-order.component.scss']
 })
 export class ListOrderComponent implements OnInit {
+
+  searchText;
+
   loading = false;
   orders: Order[];
 

@@ -4,7 +4,11 @@
         <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
         <div class="container-fluid">
             <div class="row">
-                <table class="table table-bordered">
+                <div class="search-box">
+                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                        placeholder="&#61442;">
+                </div>
+                <table class="table table-bordered table-striped">
                     <thead class="table-dark">
                         <tr>
                             <th>#</th>
@@ -14,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let order of activePageDataChunk">
+                        <tr *ngFor="let order of activePageDataChunk | filter:searchText">
                             <td>{{order.id}}</td>
                             <td>{{order.dateCreated}}</td>
                             <td>{{order.totalPrice}}</td>

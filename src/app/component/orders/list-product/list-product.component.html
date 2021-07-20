@@ -10,7 +10,11 @@
                             (click)="openModal()">CREATE
                             ORDER</button>
                     </div>
-                    <table class="table table-bordered">
+                    <div class="search-box">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+                            autocomplete="off" placeholder="&#61442;">
+                    </div>
+                    <table class="table table-bordered table-striped">
                         <thead class="table-dark">
                             <tr>
                                 <th>#</th>
@@ -19,7 +23,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let product of activePageDataChunk">
+                            <tr *ngFor="let product of activePageDataChunk | filter:searchText">
                                 <td>{{product.id}}</td>
                                 <td>{{product.name}}</td>
                                 <td>{{product.price}}</td>

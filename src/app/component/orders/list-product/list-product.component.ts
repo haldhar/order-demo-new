@@ -16,6 +16,9 @@ import { MainServiceService } from '../../../component/services/main-service.ser
   styleUrls: ['./list-product.component.scss']
 })
 export class ListProductComponent implements OnInit {
+
+  searchText;
+
   loading = false;
   products: Product[];
 

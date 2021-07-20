@@ -1,7 +1,27 @@
 table {
- width: 100%;
+  width: 100%;
 }
-  
+
 th.mat-sort-header-sorted {
- color: black;
+  color: black;
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  color: #405065;
+}
+
+.search-box {
+  max-width: 500px;
+  padding-bottom: 50px;
+  margin:auto;
+}
+
+.form-control {
+  box-shadow: 0 10px 40px 0 #B0C1D9;
+}
+
+.form-control::placeholder  {
+  font-family: FontAwesome;
 }
