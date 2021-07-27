@@ -12,6 +12,9 @@ import { AuthenticationService } from './authentication.service';
   providedIn: 'root'
 })
 export class MainServiceService {
+  static getAllOrder() {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
 
   getAllProduct() {

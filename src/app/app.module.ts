@@ -19,6 +19,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SortOverviewComponent } from './component/sort-overview/sort-overview.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table'
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -44,7 +48,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatButtonModule,
     MatDialogModule,
     FormsModule,
-    Ng2SearchPipeModule],
+    Ng2SearchPipeModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
